@@ -31,21 +31,21 @@ class HangpersonGame
   end
 	
   def guess(char)
-  	if char.nil? or /[^A-Za-z]/.match(char) != nil or char == '' or char =~ /\d/
+  	if char.nil? or /[^A-Za-z]/.match(char) != nil or char == ''
   		raise ArgumentError.new("Not a valid letter")
-	end
-  
-	if @guesses.include? char or @wrong_guesses.include? char
-		return false
-	end
-  
-	if @word.include? char
-		@guesses = @guesses + char
-		return true
-	else
-		@wrong_guesses = @wrong_guesses + char
-		return true
-	end
+  	end
+    
+  	if @guesses.include? char or @wrong_guesses.include? char
+  		return false
+  	end
+    
+  	if @word.include? char
+  		@guesses = @guesses + char
+  		return true
+  	else
+  		@wrong_guesses = @wrong_guesses + char
+  		return true
+  	end
   end
   
   def word_with_guesses
