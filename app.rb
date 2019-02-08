@@ -45,6 +45,7 @@ class HangpersonApp < Sinatra::Base
     ### YOUR CODE HERE ###
     begin
       letter = params[:guess].to_s[0]
+      letter.downcase
       guesses_before_guess = @game.guesses
       if !@game.guess(letter)
         flash[:message] = "You have already used that letter." 
