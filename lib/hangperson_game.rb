@@ -31,7 +31,7 @@ class HangpersonGame
   end
 	
   def guess(char)
-  	if char.nil? or /[^A-Za-z]/.match(char) != nil or char == ''
+  	if char.nil? or /[^A-Za-z]/.match(char) != nil or char == '' or char =~ /\d/
   		raise ArgumentError.new("Not a valid letter")
 	end
   
